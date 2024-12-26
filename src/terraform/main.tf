@@ -1,5 +1,14 @@
+
+
+# Set the Azure Provider source and version being used
 terraform {
-  required_version = ">= 1.5.7"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "2.46.0"
+    }
+  }
+
   backend "azurerm" {
     resource_group_name  = "terraform-rg"
     storage_account_name = "terraformsa457"
@@ -7,10 +16,11 @@ terraform {
     key                  = "azureinfra_tfstate_file.tfstate"
   }
 }
- 
+
 provider "azurerm" {
   features {}
 }
+
  
 data "azurerm_client_config" "current" {}
  
