@@ -1,5 +1,5 @@
 resource "azurerm_windows_virtual_machine" "vm1" {
-  name                = "${var.prefix}-test-vm1"
+  name                = "${var.prefix}-vm1"
   resource_group_name = azurerm_resource_group.tamops.name
   location            = azurerm_resource_group.tamops.location
   size                = "Standard_B2ms"
